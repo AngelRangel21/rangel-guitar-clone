@@ -76,7 +76,7 @@ export function RegisterForm() {
     toast.success("¡Registro exitoso!", {
       description: "Revisa tu email para confirmar tu cuenta",
     });
-    router.push("/auth/login");
+    router.push("/");
   };
 
   return (
