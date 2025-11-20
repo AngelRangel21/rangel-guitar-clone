@@ -56,6 +56,27 @@ export class CifraService {
     return data as CifraWithArtist
   }
 
+  static async getBySlugServer(slug: string): Promise<CifraWithArtist | null> {
+    const supabase = await createServerSupabaseClient()
+    
+    const { data, error } = await supabase
+      .from('cifras')
+      .select(`
+        *,
+        artist:artists(*)
+      `)
+      .eq('slug', slug)
+      .eq('status', 'published')
+      .single()
+
+    if (error) {
+      console.error('Error fetching cifra:', error)
+      return null
+    }
+
+    return data as CifraWithArtist
+  }
+
   // Obtener cifra por slug de artista y slug de cifra
   static async getBySlug(artistSlug: string, cifraSlug: string): Promise<CifraWithArtist | null> {
     const supabase = createClient()
@@ -109,7 +130,7 @@ export class CifraService {
       return []
     }
 
-    return data as CifraPreview[]
+    return data as unknown as CifraPreview[]
   }
 
   // Obtener cifras recientes
@@ -138,7 +159,7 @@ export class CifraService {
       return []
     }
 
-    return data as CifraPreview[]
+    return data as unknown as CifraPreview[]
   }
 
   // Obtener cifras por artista
@@ -168,7 +189,7 @@ export class CifraService {
       return []
     }
 
-    return data as CifraPreview[]
+    return data as unknown as CifraPreview[]
   }
 
   // Incrementar contador de vistas
