@@ -51,7 +51,7 @@ export function CifraCard({ cifra }: CifraCardProps) {
           </div>
 
           {/* Título */}
-          <Link href={`/cifras/${cifra.id}`} className="block">
+          <Link href={`/cifras/${cifra.slug}`} className="block">
             <h3 className="font-semibold text-lg group-hover:text-primary transition-colors line-clamp-2">
               {cifra.title}
             </h3>
@@ -86,7 +86,7 @@ export function CifraCard({ cifra }: CifraCardProps) {
       </CardContent>
       <CardFooter className="p-4 pt-0">
         <Button variant="outline" className="w-full">
-          <Link href={`/cifras/${cifra.id}`}>Ver Cifra</Link>
+          <Link href={`/cifras/${cifra.slug}`}>Ver Cifra</Link>
         </Button>
       </CardFooter>
     </Card>
