@@ -66,8 +66,7 @@ export function CifraSidebar({ cifra }: CifraSidebarProps) {
         <CardContent className="space-y-4">
           <Link
             href={`/artistas/${cifra.artist.slug}`}
-            className="flex items-center gap-3 group"
-          >
+            className="flex items-center gap-3 group">
             <Avatar className="h-12 w-12">
               <AvatarImage src={cifra.artist.image_url || ""} />
               <AvatarFallback>
@@ -95,12 +94,27 @@ export function CifraSidebar({ cifra }: CifraSidebarProps) {
       {cifra.has_video && cifra.video_url && (
         <Card>
           <CardHeader>
-            <CardTitle className="text-base">Video Tutorial</CardTitle>
+            <CardTitle className="text-base">Video</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="aspect-video bg-(--color-muted) rounded-lg flex items-center justify-center">
-              <p className="text-sm text-muted-foreground">Video tutorial</p>
-            </div>
+            {cifra.has_video ? (
+              <div className="aspect-video bg-(--color-muted) rounded-lg flex items-center justify-center">
+                <iframe
+                  className="w-full h-full rounded-b-md"
+                  src={`https://www.youtube.com/embed/${cifra.video_url}`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                />
+              </div>
+            ) : (
+              <div className="aspect-video bg-(--color-muted) rounded-lg flex items-center justify-center">
+                <p className="text-sm text-muted-foreground">
+                  Video no disponible
+                </p>
+              </div>
+            )}
           </CardContent>
         </Card>
       )}
@@ -111,8 +125,7 @@ export function CifraSidebar({ cifra }: CifraSidebarProps) {
       <Button
         variant="ghost"
         size="sm"
-        className="w-full text-muted-foreground"
-      >
+        className="w-full text-muted-foreground">
         <Flag className="h-4 w-4 mr-2" />
         Reportar error
       </Button>
