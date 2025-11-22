@@ -14,6 +14,7 @@ export interface Profile {
   skill_level: SkillLevel | null
   created_at: string
   updated_at: string
+  role: 'user' | 'admin' | 'moderator'
 }
 
 export interface User {
