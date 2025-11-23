@@ -41,7 +41,7 @@ export function RecentSection() {
   }
 
   return (
-    <section className="py-12 bg-(--color-muted)/30">
+    <section className="py-12 bg-muted/30 pb-20">
       <div className="container">
         <div className="flex items-center gap-2 mb-8">
           <Clock className="h-6 w-6 text-primary" />
