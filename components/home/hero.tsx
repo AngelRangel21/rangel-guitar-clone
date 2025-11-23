@@ -1,9 +1,9 @@
 // ============================================
 // components/home/hero.tsx
 // ============================================
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Search, TrendingUp, Music2, Users } from "lucide-react";
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Search, TrendingUp, Music2, Users } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -15,21 +15,15 @@ export function Hero() {
             <span className="text-primary"> canciones favoritas</span>
           </h1>
           <p className="text-xl text-muted-foreground">
-            Miles de cifras, tablaturas y acordes de las mejores canciones en
-            español
+            Miles de cifras, tablaturas y acordes de las mejores canciones en español
           </p>
 
           {/* Search */}
           <div className="max-w-2xl mx-auto">
             <div className="relative">
               <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
-              <Input
-                placeholder="Busca por canción, artista o letra..."
-                className="h-14 pl-12 text-lg"
-              />
-              <Button
-                className="absolute right-2 top-1/2 -translate-y-1/2"
-                size="sm">
+              <Input placeholder="Busca por canción, artista..." className="h-14 pl-12 text-lg" />
+              <Button className="absolute right-2 top-1/2 -translate-y-1/2" size="sm">
                 Buscar
               </Button>
             </div>

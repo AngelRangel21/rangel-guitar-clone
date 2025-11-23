@@ -67,7 +67,7 @@ export function CifraCard({ cifra }: CifraCardProps) {
                 {difficultyLabels[cifra.difficulty]}
               </Badge>
             )}
-            <Badge variant="outline">Tom: {cifra.original_key}</Badge>
+            <Badge variant="outline">Tono: {cifra.original_key}</Badge>
           </div>
 
           {/* Stats */}
