@@ -29,7 +29,7 @@ export function SearchBar({
   const containerRef = useRef<HTMLDivElement>(null);
 
   // Debounce para no hacer búsquedas en cada tecla
-  const debouncedQuery = useDebounce(query, 300);
+  const debouncedQuery = useDebounce(query, 500);
 
   // Función de búsqueda separada
   const performSearch = useCallback(async (searchQuery: string) => {
