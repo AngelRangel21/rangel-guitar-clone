@@ -1,0 +1,21 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
+  "singleQuote": true,
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "printWidth": 120,
+  "arrowParens": "avoid",
+  "rangeStart": 0,
+  "rangeEnd": 10000,
+  "endOfLine": "auto",
+  "overrides": [
+    {
+      "files": "*.{js,jsx,ts,tsx}",
+      "options": {
+        "parser": "babel"
+      }
+    }
+  ]
+}
